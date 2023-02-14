@@ -1,0 +1,107 @@
+.section-cta {
+    position: relative;
+    padding-top: 83px;
+    padding-bottom: 80px;
+
+    @include bgImage("./../img/bg/cta-bg.jpg");
+
+    &::before {
+        @extend %overlay;
+    }
+
+    /* Tablet */
+    @media (max-width: 1199px) {
+        padding-top: 41px;
+        padding-bottom: 36px;
+        @include bgImage("./../img/bg/cta-bg-tablet.jpg");
+    }
+
+    /* Mobile */
+    @media (max-width: 899px) {
+        @include bgImage("./../img/bg/cta-bg-mobile.jpg");
+    }
+
+    /* Mobile XS */
+    @media (max-width: 599px) {
+        @include bgImage("./../img/bg/cta-bg-mobile-xs.jpg");
+    }
+}
+
+.section-cta__content {
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.section-cta__offer {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1;
+
+    /* Mobile */
+    @media (max-width: 899px) {
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+
+    /* Mobile XS */
+    @media (max-width: 599px) {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+}
+
+.section-cta__link {
+    display: inline-block;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 60px;
+    background: #00C470;
+    border: none;
+    border-radius: 30px;
+
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 60px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+
+    transition: all 0.2s ease-in;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.section-cta__link::before {
+    content: "";
+    display: inline-block;
+
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    transform: translateX(-110px) skew(-30deg, 0);
+    
+    transition: transform 0.35s ease-in-out;
+    
+}
+
+.section-cta__link:hover.section-cta__link::before {
+    transform: translateX(220px) skew(-30deg, 0);
+}
+
+
+.section-cta__link:hover {
+    background: #00a65e;
+}
+
+.section-cta__link:focus {
+    outline: none;
+    background: #009c58;
+}
